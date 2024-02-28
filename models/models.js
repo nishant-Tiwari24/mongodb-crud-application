@@ -1,14 +1,11 @@
-import mongoose, {Schema} from "mongoose";
+import mongoose from "mongoose";
 
 const topicSchema = new mongoose.Schema(
     {
-        title : {
-            type: String,
-            required: true
-        },
-        description : {
-            type: String
-        },        
-    },{timestamps: true})
+        title:String,
+        description:String
+    },{timestamps: true});
 
-export const Topic = new mongoose.Model('Topic',topicSchema);
+const Topic = mongoose.models.Topic || mongoose.model('Topic', topicSchema);
+
+export { Topic };
