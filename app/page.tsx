@@ -8,7 +8,6 @@ export default function Home() {
       <Navbar />
       <div className="flex-grow py-10 flex flex-col justify-center items-center">
         <TopicList />
-        <TopicList />
       </div>
     </main>
   );
