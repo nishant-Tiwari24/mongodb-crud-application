@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Navbar from './Navbar';
 
-const AddTopic: React.FC = () => {
+const EditTopic: React.FC = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
 
@@ -59,4 +59,4 @@ const AddTopic: React.FC = () => {
   );
 };
 
-export default AddTopic;
+export default EditTopic;
