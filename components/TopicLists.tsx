@@ -13,6 +13,7 @@ const getTopics = async () => {
   }
 }
 
+
 const TopicList = async () => {
   const {topics} = await getTopics();
   return (
@@ -25,7 +26,7 @@ const TopicList = async () => {
         </div>
 
         <div className='flex gap-2'>
-            <RemoveBtn/>
+            <RemoveBtn id = {t._id}/>
             <Link className='text-green-400' href={`/editTopic/${t._id}`}>
                 <HiPencilAlt size={24}/>
             </Link>

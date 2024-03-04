@@ -1,12 +1,28 @@
-import React from 'react'
-import { MdDeleteOutline } from 'react-icons/md'
+'use client';
+import React from 'react';
+import { MdDeleteOutline } from 'react-icons/md';
+import { useRouter } from 'next/navigation';
 
-function RemoveBtn() {
-  return (
-    <div className='text-blue-400'>
-      <MdDeleteOutline size={24}/>
-    </div>
-  )
+interface RemoveBtnProps {
+  id: string;
 }
 
-export default RemoveBtn
+const RemoveBtn: React.FC<RemoveBtnProps> = ({ id }) => {
+  const router = useRouter();
+  const removeTopic = async () => {
+    const confirmed = confirm("Are you sure?");
+    if(confirmed) {
+      const res = await fetch(`http://localhost:3000/api/topics/?id=${id}`, { method: "DELETE" });
+      if(res.ok) {
+        router.refresh();
+      }
+    }
+  }
+  return (
+    <div onClick={removeTopic} className='text-blue-400 cursor-pointer'>
+      <MdDeleteOutline size={24} />
+    </div>
+  );
+};
+
+export default RemoveBtn;

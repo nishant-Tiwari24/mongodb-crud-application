@@ -6,7 +6,7 @@ import { AiOutlinePlus } from 'react-icons/ai';
 const Navbar: React.FC = () => {
 
   return (
-    <nav className="bg-slate-900 p-4 w-full">
+    <nav className="bg-slate-800 p-4 w-full">
       <div className="container mx-auto flex items-center justify-between">
         <div>
           <h1 className="text-white font-light text-xl"><Link href={'/'}>my application</Link></h1>
