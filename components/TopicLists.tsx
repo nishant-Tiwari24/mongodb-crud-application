@@ -19,7 +19,7 @@ const TopicList = async () => {
   return (
     <>
     {topics.map((t:any) => (
-    <div key={t._id} className='p-4 border my-3 w-3/4 rounded-md flex justify-between items-center gap-5'>
+    <div className='p-4 border my-3 w-3/4 rounded-md flex justify-between items-center gap-5'>
         <div className='gap-4'>
             <h2 className='text-white font-bold'>{t.title}</h2>
             <p className='text-white'>{t.description}</p>
